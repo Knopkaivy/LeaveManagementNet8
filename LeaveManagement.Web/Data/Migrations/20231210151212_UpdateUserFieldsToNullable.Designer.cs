@@ -4,6 +4,7 @@ using LeaveManagement.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagement.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231210151212_UpdateUserFieldsToNullable")]
+    partial class UpdateUserFieldsToNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,7 @@ namespace LeaveManagement.Web.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DateJoined")
+                    b.Property<DateTime>("DateJoined")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateOfBirth")
@@ -100,48 +103,6 @@ namespace LeaveManagement.Web.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "0d3e459d-d328-4c1b-bf08-e039f322e9ee",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "d0052771-e090-4a91-b8c2-3e9f8967300e",
-                            DateJoined = new DateTime(2023, 12, 10, 14, 4, 20, 702, DateTimeKind.Local).AddTicks(3415),
-                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "test2@test.com",
-                            EmailConfirmed = true,
-                            Firstname = "System",
-                            Lastname = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "TEST2@TEST.COM",
-                            NormalizedUserName = "TEST2@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA/rWNsFwJqXBhuRbjhET9qLoJF6pFrsuj2SI/yd/MAq7kvF1fdwNlpytkDfo21vaA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "3a835bc5-becb-4867-9e17-6317d709d9c3",
-                            TwoFactorEnabled = false,
-                            UserName = "test2@test.com"
-                        },
-                        new
-                        {
-                            Id = "12ef8ca0-5f8f-4ae9-b931-51d00e068f9f",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "9451481a-4dea-42e8-b624-b98e4199fa95",
-                            DateJoined = new DateTime(2023, 12, 10, 14, 4, 20, 873, DateTimeKind.Local).AddTicks(6071),
-                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tata@tata.com",
-                            EmailConfirmed = true,
-                            Firstname = "System",
-                            Lastname = "User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "TATA@TATA.COM",
-                            NormalizedUserName = "TATA@TATA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMUYpRA2iMmAlLAowkEjlPeiT9dJ/8VHwAxpdeWii8hFT8S2vP7nnA9QeyTTSPCKew==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "40f30987-3edb-4cd1-b91e-1bc3ad9ef1c4",
-                            TwoFactorEnabled = false,
-                            UserName = "tata@tata.com"
-                        });
                 });
 
             modelBuilder.Entity("LeaveManagement.Web.Data.LeaveAllocation", b =>
@@ -226,20 +187,6 @@ namespace LeaveManagement.Web.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "41c3d13b-aa32-4cea-add9-166ab4875243",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "3d3e495d-d388-4c1b-bf88-e039f322e9ae",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -329,18 +276,6 @@ namespace LeaveManagement.Web.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "0d3e459d-d328-4c1b-bf08-e039f322e9ee",
-                            RoleId = "41c3d13b-aa32-4cea-add9-166ab4875243"
-                        },
-                        new
-                        {
-                            UserId = "12ef8ca0-5f8f-4ae9-b931-51d00e068f9f",
-                            RoleId = "3d3e495d-d388-4c1b-bf88-e039f322e9ae"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
