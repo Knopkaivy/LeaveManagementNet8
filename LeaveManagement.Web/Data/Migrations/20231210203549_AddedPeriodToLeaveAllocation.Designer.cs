@@ -4,6 +4,7 @@ using LeaveManagement.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagement.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231210203549_AddedPeriodToLeaveAllocation")]
+    partial class AddedPeriodToLeaveAllocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,8 +109,8 @@ namespace LeaveManagement.Web.Data.Migrations
                         {
                             Id = "0d3e459d-d328-4c1b-bf08-e039f322e9ee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "29fef8d0-747c-45bf-9cc0-021a877a0e0f",
-                            DateJoined = new DateTime(2023, 12, 10, 14, 39, 59, 720, DateTimeKind.Local).AddTicks(9154),
+                            ConcurrencyStamp = "dcb86e89-ac43-4e6d-8171-944584fdfacb",
+                            DateJoined = new DateTime(2023, 12, 10, 14, 35, 47, 204, DateTimeKind.Local).AddTicks(2992),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "test2@test.com",
                             EmailConfirmed = true,
@@ -116,9 +119,9 @@ namespace LeaveManagement.Web.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TEST2@TEST.COM",
                             NormalizedUserName = "TEST2@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB+cYsjXQH8MHYspZqW3XpemHJpBxVFr8J0yXLewx7uoDQ4mElPGwMWDCZ8/7DjpNQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAAFMvPS6ceX8CH0akuPSFHPfESiY+CZHX3pXM+yhe0bsexVQB/tFJLslCouo9plPA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "417111c8-9a80-41b1-8c7f-d90563547cb7",
+                            SecurityStamp = "0ee2042c-4667-4991-b660-2bec614c97a2",
                             TwoFactorEnabled = false,
                             UserName = "test2@test.com"
                         },
@@ -126,8 +129,8 @@ namespace LeaveManagement.Web.Data.Migrations
                         {
                             Id = "12ef8ca0-5f8f-4ae9-b931-51d00e068f9f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e836c2ff-73eb-4f1f-b043-4454eb94bd61",
-                            DateJoined = new DateTime(2023, 12, 10, 14, 39, 59, 897, DateTimeKind.Local).AddTicks(7048),
+                            ConcurrencyStamp = "cbc87ee8-9956-4ece-87a8-1834c0e86e4b",
+                            DateJoined = new DateTime(2023, 12, 10, 14, 35, 47, 358, DateTimeKind.Local).AddTicks(3863),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tata@tata.com",
                             EmailConfirmed = true,
@@ -136,9 +139,9 @@ namespace LeaveManagement.Web.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TATA@TATA.COM",
                             NormalizedUserName = "TATA@TATA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJk2LOIFwsmlOw9bmE31fp9eW+9dpO3cnBvLYAbJ6gQJOsEiv0d8WVi+hm2EUNg3/w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIMk3szPnCfU/tCUnEhufTjEyTkO+CGQMCnO/wrr7fHa9CbvbdOtHWXNXQ7jy+3qhw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "81e1bc80-d788-42ce-8097-82a89c7241de",
+                            SecurityStamp = "3455d29f-79a7-4077-9088-bd0d9e76b24e",
                             TwoFactorEnabled = false,
                             UserName = "tata@tata.com"
                         });
